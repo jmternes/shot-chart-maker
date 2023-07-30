@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- learn node to implement into project -->
+
+    <div id="court-container">
+        <img id="basketball-court" src="path/to/basketball-court-image.jpg" alt="Basketball Court">
+        <div class="icon" id="x-icon">X</div>
+        <div class="icon" id="o-icon">O</div>
+      </div>
+      <input type="text" id="caption-input" placeholder="Enter caption">
+      <script>
+        const courtContainer = document.getElementById("court-container");
+        const xIcon = document.getElementById("x-icon");
+        const oIcon = document.getElementById("o-icon");
+        const captionInput = document.getElementById("caption-input");
+    
+        courtContainer.addEventListener("click", handleCourtClick);
+    
+        function handleCourtClick(event) {
+          const icon = event.target === xIcon ? "X" : "O";
+          const posX = event.clientX - courtContainer.offsetLeft;
+          const posY = event.clientY - courtContainer.offsetTop;
+    
+          drawIcon(icon, posX, posY);
+        }
+    
+        function drawIcon(icon, x, y) {
+          const iconElement = document.createElement("div");
+          iconElement.innerText = icon;
+          iconElement.classList.add("icon");
+          iconElement.style.left = x + "px";
+          iconElement.style.top = y + "px";
+          iconElement.style.position = "absolute";
+          iconElement.style.cursor = "pointer";
+          iconElement.style.fontSize = "20px";
+          iconElement.style.color = icon === "X" ? "red" : "green";
+    
+          courtContainer.appendChild(iconElement);
+        }
+      </script>
+</body>
+</html>
