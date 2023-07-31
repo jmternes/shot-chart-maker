@@ -21,41 +21,16 @@
       </div>
 
       <div class="icons-container">
-        <div class="icon" id="x-icon"><img src="./images/x.png" alt=""></div>
-        <div class="icon" id="o-icon"><img src="./images/circle.png" alt=""></div>
+        <div class="icon"><img id="x-icon" draggable="true" src="./images/x.png" alt=""></div>
+        <div class="icon"><img id="o-icon" draggable="true" src="./images/circle.png" alt=""></div>
       </div>
 
 
-      <input type="text" id="caption-input" placeholder="Enter caption">
       <script>
         const courtContainer = document.getElementById("court-container");
         const xIcon = document.getElementById("x-icon");
         const oIcon = document.getElementById("o-icon");
-        const captionInput = document.getElementById("caption-input");
 
-        courtContainer.addEventListener("click", handleCourtClick);
-
-        function handleCourtClick(event) {
-          const icon = event.target === xIcon ? "X" : "O";
-          const posX = event.clientX - courtContainer.offsetLeft;
-          const posY = event.clientY - courtContainer.offsetTop;
-
-          drawIcon(icon, posX, posY);
-        }
-
-        function drawIcon(icon, x, y) {
-          const iconElement = document.createElement("div");
-          iconElement.innerText = icon;
-          iconElement.classList.add("icon");
-          iconElement.style.left = x + "px";
-          iconElement.style.top = y + "px";
-          iconElement.style.position = "absolute";
-          iconElement.style.cursor = "pointer";
-          iconElement.style.fontSize = "20px";
-          iconElement.style.color = icon === "X" ? "red" : "green";
-
-          courtContainer.appendChild(iconElement);
-        }
       </script>
 </body>
 </html>
