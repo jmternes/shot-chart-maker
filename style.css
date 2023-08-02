@@ -31,12 +31,13 @@ body {
 
 textarea {
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: 60px;
     resize: none;
     margin-top: 20px;
     font-family: 'Merriweather', serif;
-    font-size: 24px;
+    font-size: 36px;
     background-color: transparent;
     color: black;
     text-align: center;
