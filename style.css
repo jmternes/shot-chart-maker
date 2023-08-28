@@ -37,7 +37,7 @@ textarea {
     resize: none;
     margin-top: 20px;
     font-family: 'Merriweather', serif;
-    font-size: 36px;
+    font-size: 32px;
     background-color: transparent;
     color: black;
     text-align: center;
@@ -91,3 +91,72 @@ textarea {
 #caption-input {
     margin-top: 10px;
     }
+
+
+/* Mobile */
+
+@media screen {
+    @media (max-width: 1348px) {
+        .icons-container {
+            left: 5%;
+        }
+    }
+
+    @media (max-width: 1036px) {
+        .icons-container {
+            left: 0%;
+        }
+
+        #court-container {
+            width: 621px;
+            height: 507px;
+            background-size: 621px 507px;
+            margin-top: 200px;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .icons-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 12rem;
+            gap: .75rem;
+        }
+
+        .icon img {
+            width: 30px;
+            height: 30px;
+        }
+
+        #court-container {
+            width: 414px;
+            height: 338px;
+            background-size: 414px 338px;
+            margin-top: 200px;
+        }
+
+        textarea {
+            font-size: 16px;
+        }
+
+    }
+
+    @media (max-width: 422px) {
+        .icons-container {
+            margin-top: 6rem;
+        }
+
+        #court-container {
+            width: 300px;
+            height: 245px;
+            background-size: 300px 245px;
+            margin-top: 200px;
+        }
+
+        textarea {
+            font-size: 14px;
+            height: fit-content;
+        }
+    }
+}
